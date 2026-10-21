@@ -1,0 +1,17 @@
+{
+  "name": "clementine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Drag a file, tap a key, drop. Offline file converter for Windows.",
+  "scripts": {
+    "tauri": "tauri",
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "test:ui": "node tests/ui.test.js",
+    "test:engine": "cd src-tauri && cargo test --bin clementine converter -- --test-threads=2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "jsdom": "^26"
+  }
+}

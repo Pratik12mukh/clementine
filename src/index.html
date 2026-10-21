@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clementine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="stage">
+    <header>
+      <div class="brand"><span class="dot"></span>Clementine</div>
+      <div id="deps" aria-label="Helper tools"></div>
+      <div class="head-actions">
+        <button id="pinBtn" class="chip" title="Keep Clementine on top of other windows" aria-pressed="false">Float</button>
+        <button id="settingsBtn" class="chip" title="Settings and helper tools">Settings</button>
+      </div>
+    </header>
+
+    <section id="home">
+      <h1>Drag a file. Tap a key. Drop.</h1>
+      <p class="sub">Everything runs on your PC. Nothing is uploaded.</p>
+
+      <div id="dropzone">
+        <div class="ring"></div>
+        <p class="big">Drag files here</p>
+        <p class="hint" id="hint"></p>
+      </div>
+
+      <ul id="formats">
+        <li>Images</li><li>Video</li><li>Audio</li><li>PDF</li><li>Documents</li>
+        <li>Slides</li><li>Spreadsheets</li><li>Subtitles</li><li>Archives</li>
+      </ul>
+      <p id="stats" class="stats"></p>
+    </section>
+
+    <div id="layer" hidden>
+      <div id="tabs" role="tablist"></div>
+      <div id="wheel" role="menu"></div>
+      <p id="keys"></p>
+    </div>
+
+    <div id="modal" hidden>
+      <form id="modalForm">
+        <h2 id="modalTitle"></h2>
+        <div id="modalFields"></div>
+        <div class="row">
+          <button type="button" id="modalCancel" class="ghost">Cancel</button>
+          <button type="submit">Run</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="panel" hidden>
+      <div class="card">
+        <div class="card-head">
+          <h2>Settings</h2>
+          <button id="panelClose" class="ghost">Done</button>
+        </div>
+
+        <h3>Keys</h3>
+        <p class="muted">Hold or tap a key while dragging to open that wheel.</p>
+        <div id="keyRows"></div>
+
+        <h3>Helper tools</h3>
+        <p class="muted">Clementine uses these free programs to do the conversions. Missing ones can be installed with one click (needs Windows 10/11 with winget).</p>
+        <div id="toolRows"></div>
+        <div class="row"><button id="installAll" type="button">Install all missing</button></div>
+      </div>
+    </div>
+
+    <ul id="log" aria-live="polite"></ul>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
